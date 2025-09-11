@@ -34,8 +34,4 @@ logging:
     root: INFO
     org.springframework.amqp: DEBUG
 
-# ===== Swagger / Springdoc =====
-springdoc:
-  swagger-ui:
-    url: /openapi/catalogue.yaml
-    disable-swagger-default-url: true
+
