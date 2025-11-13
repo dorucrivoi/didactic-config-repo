@@ -1,0 +1,10 @@
+spring:
+  config:
+    activate:
+      on-profile: logging
+
+logging:
+  level:
+    root: INFO
+    org.springframework.amqp: DEBUG
+
