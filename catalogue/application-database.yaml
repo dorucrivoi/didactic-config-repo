@@ -1,0 +1,32 @@
+spring:
+  config:
+    activate:
+      on-profile: database
+
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+      defer-datasource-initialization: true
+
+  # ===== JPA / Hibernate / Envers =====
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: false
+    properties:
+      org.hibernate.envers.audit_strategy: org.hibernate.envers.strategy.ValidityAuditStrategy
+      org.hibernate.envers.audit_strategy_validity_end_rev_field_name: revend
+      org.hibernate.envers.audit_strategy_validity_store_revend_timestamp: true
+      org.hibernate.envers.audit_strategy_validity_revend_timestamp_field_name: revend_tstmp
+      org.hibernate.envers.store_data_at_delete: true
+
+  flyway:
+    enabled: true
+    locations: classpath:db/migration

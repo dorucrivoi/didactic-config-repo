@@ -1,0 +1,4 @@
+springdoc:
+  swagger-ui:
+    url: /openapi/didactic_personal.yaml
+    disable-swagger-default-url: true
